@@ -242,7 +242,7 @@ let n = '1' + 1; // catanates to string '11'
 n = n - 1; // - sign forces '11' to become number 11 the -1 = 10
 console.log(n);
 
-*/
+
 //21. Truthy and Falsy values
 
 //five falsy values: 0, " ", undefined, null, NaN
@@ -268,6 +268,9 @@ if (height) {
 } else {
     console.log('Height is UNDEFINED');
 };
+*/
+
+//22. Equality Operators
 
 
 
