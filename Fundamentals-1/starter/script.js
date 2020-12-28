@@ -112,7 +112,7 @@ console.log(x, y);
 
 const averageAge = (ageJonas + ageSarah) / 2;
 console.log(ageJonas, ageSarah, averageAge);
-*/
+
 
 
 ////////////////////////////////
@@ -137,6 +137,61 @@ const markHigherBMI = markBMI > johnBMI;
 
 console.log("Mark's BMI" + ' ' + markBMI, "John's BMI" + ' ' + johnBMI);
 console.log("Is Mark's BMI higher?" + ' ' + markHigherBMI);
+
+
+
+//basic strings
+const firstName = 'Jonas';
+const job = 'teacher';
+const birthYear = 1991;
+const year = 2037;
+
+const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + ' year old ' + job + '!';
+console.log(jonas);
+
+//Template Literals use (`) tick mark around statement and then ${} for predefined variables
+
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(jonasNew);
+
+//you can use back ticks for any string
+console.log(`Just a regular string..`);
+
+console.log('string with \n\
+multiple \n\
+lines');
+
+console.log(`string
+multiple
+lines`)
+*/
+
+//take decisions and else if statements
+const age = 15;
+//const isOldEnough = age >= 18;
+
+if (age >= 18) {
+    console.log("Sarah can start driving license  ");
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+};
+
+const birthYear = 1991;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+};
+console.log(century);
+
+
+//Coding Challenge #2
+
+
+
+
 
 
 
