@@ -185,7 +185,7 @@ if (birthYear <= 2000) {
     century = 21;
 };
 console.log(century);
-*/
+
 
 //Coding Challenge #2
 
@@ -206,16 +206,82 @@ const johnBMI = johnMass / (johnHeight * johnHeight);
 
 const markHigherBMI = markBMI > johnBMI;
 
-console.log("Mark's BMI" + ' ' + markBMI, "John's BMI" + ' ' + johnBMI);
-console.log("Is Mark's BMI higher?" + ' ' + markHigherBMI);
+//console.log("Mark's BMI" + ' ' + markBMI, "John's BMI" + ' ' + johnBMI);
+//console.log("Is Mark's BMI higher?" + ' ' + markHigherBMI);
 
-if (markHigherBMI) {
-    console.log(`Mark's ${markBMI} BMI is higher than
-    John's ${johnBMI} BMI!`);
+if (markBMI > johnBMI) {
+    console.log(`Mark's (${markBMI}) BMI is higher than
+    John's (${johnBMI}) BMI!`);
 } else {
-    console.log(`John's ${johnBMI} BMI is higher than
-    Mark's ${markBMI} BMI!`);
+    console.log(`John's (${johnBMI}) BMI is higher than
+    Mark's (${markBMI}) BMI!`);
 };
+
+
+//Type conversion
+
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas'));
+console.log(typeof NaN);
+
+console.log(String(23), 23);
+
+//Type coercion
+console.log("I am " + 23 + " years old");  //this changes 23 to string behind the sences
+console.log('23' - '10' - 3);
+console.log('23' + '10' + 3);
+console.log('23' * '2');
+console.log('23' / '2');
+console.log('23' > '18');
+console.log('23' < '18');
+
+let n = '1' + 1; // catanates to string '11'
+n = n - 1; // - sign forces '11' to become number 11 the -1 = 10
+console.log(n);
+
+*/
+//21. Truthy and Falsy values
+
+//five falsy values: 0, " ", undefined, null, NaN
+
+console.log(Boolean(0)); // the number 0
+console.log(Boolean(undefined)); //undefined
+console.log(Boolean('Jonas')); //not a falsey because it is a defined string
+console.log(Boolean({})); //empty object
+console.log(Boolean('')); //empty string
+
+const money = 100; //0 is a falsy
+if (money) {
+    console.log("Don't spend it all ;)");
+
+} else {
+    console.log("You should get a job!");
+};
+
+let height = 0;
+if (height) {
+    console.log("YAY! Height is defined!");
+
+} else {
+    console.log('Height is UNDEFINED');
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
