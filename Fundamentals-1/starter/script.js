@@ -164,7 +164,7 @@ lines');
 console.log(`string
 multiple
 lines`)
-*/
+
 
 //take decisions and else if statements
 const age = 15;
@@ -185,9 +185,39 @@ if (birthYear <= 2000) {
     century = 21;
 };
 console.log(century);
-
+*/
 
 //Coding Challenge #2
+
+const markMass = 78;
+const markHeight = 1.69;
+
+const johnMass = 92;
+const johnHeight = 1.95;
+
+// const markMass = 95;
+// const markHeight = 1.88;
+
+// const johnMass = 85;
+// const johnHeight = 1.76;
+
+const markBMI = markMass / markHeight ** 2;
+const johnBMI = johnMass / (johnHeight * johnHeight);
+
+const markHigherBMI = markBMI > johnBMI;
+
+console.log("Mark's BMI" + ' ' + markBMI, "John's BMI" + ' ' + johnBMI);
+console.log("Is Mark's BMI higher?" + ' ' + markHigherBMI);
+
+if (markHigherBMI) {
+    console.log(`Mark's ${markBMI} BMI is higher than
+    John's ${johnBMI} BMI!`);
+} else {
+    console.log(`John's ${johnBMI} BMI is higher than
+    Mark's ${markBMI} BMI!`);
+};
+
+
 
 
 
