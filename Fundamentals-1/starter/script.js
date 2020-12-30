@@ -298,6 +298,74 @@ if (favourite !== 23) {
 
 
 //23. Boolean Logic
+// AND, OR & NOT video only no coding
+
+//24. Logical operators
+/*
+const hasDiversLicense = true; //A
+const hasGoodVision = true; //B
+
+console.log(hasDiversLicense && hasGoodVision);
+console.log(hasDiversLicense || hasGoodVision);
+console.log(!hasDiversLicense);
+
+const shouldDrive = hasDiversLicense && hasGoodVision;
+
+// if (hasDiversLicense && hasGoodVision) {
+//     console.log("Sarah is able to drive!");
+// } else {
+//     console.log("Someone else should drive..");
+// };
+
+const isTired = false; //C
+console.log(hasDiversLicense || hasGoodVision || isTired);
+
+if (hasDiversLicense && hasGoodVision && !isTired) {
+    console.log("Sarah is able to drive!");
+} else {
+    console.log("Someone else should drive..");
+};
+*/
+
+//Coding challenge #3
+
+//(96 + 108 + 89)
+// const dophinsAvgScore = (96 + 108 + 89) / 3;
+// const koalasAvgScore = (88 + 91 + 110) / 3;
+
+// console.log(dophinsAvgScore, koalasAvgScore);
+
+// if (dophinsAvgScore > koalasAvgScore) {
+//     console.log("Dophins win the competition!");
+// } else if (dophinsAvgScore < koalasAvgScore) {
+//     console.log("Koalas win the competition!");
+// } else if (dophinsAvgScore === koalasAvgScore) {
+//     console.log("The competition ends in a draw!");
+// };
+
+//Bonus #1
+const dophinsAvgScore = (97 + 112 + 101) / 3;
+const koalasAvgScore = (109 + 95 + 106) / 3;
+
+console.log(dophinsAvgScore, koalasAvgScore);
+
+if (dophinsAvgScore > koalasAvgScore && dophinsAvgScore >= 100) {
+    console.log("Dophins win the competition!");
+} else if (dophinsAvgScore < koalasAvgScore && koalasAvgScore >= 100) {
+    console.log("Koalas win the competition!");
+} else if (dophinsAvgScore === koalasAvgScore && koalasAvgScore >= 100 && dophinsAvgScore >= 100) {
+    console.log("The competition ends in a draw!");
+} else {
+    console.log("No one wins or draws, both scores under a 100 points!");
+};
+
+
+
+
+
+
+
+
 
 
 
