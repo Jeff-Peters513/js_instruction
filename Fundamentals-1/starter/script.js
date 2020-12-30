@@ -343,6 +343,7 @@ if (hasDiversLicense && hasGoodVision && !isTired) {
 //     console.log("The competition ends in a draw!");
 // };
 
+/*
 //Bonus #1
 const dophinsAvgScore = (97 + 112 + 101) / 3;
 const koalasAvgScore = (109 + 95 + 106) / 3;
@@ -358,10 +359,56 @@ if (dophinsAvgScore > koalasAvgScore && dophinsAvgScore >= 100) {
 } else {
     console.log("No one wins or draws, both scores under a 100 points!");
 };
+*/
 
+//26. The Switch Statement
 
+const day = 'monday';
 
+/*
+switch (day) {
+    case 'monday': // day === 'monday'  strict equality check
+        console.log("Plan course structure");
+        console.log("Go to coding meetup");
+        break;
+    case 'tuesday':
+        console.log("Prepare theory videos");
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log("Write code examples");
+        break;
+    case 'friday':
+        console.log("Record videos");
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log("Enjoy the weekend :D");
+        break;
+    default:
+        console.log("Not a day of the week!!")
+        break;
+};
+*/
 
+/*
+if (day === 'monday') {
+    console.log("Plan course structure");
+    console.log("Go to coding meetup");
+} else if (day === 'tuesday') {
+    console.log("Prepare theory videos");
+} else if (day === 'wednesday' || 'thursday') {
+    console.log("Write code examples");
+} else if (day === 'friday') {
+    console.log("Recode videos");
+} else if (day === 'saturday' || 'sunday') {
+    console.log("Enjoy the weekend :D");
+} else {
+    console.log('Not a valid day!!');
+};
+*/
+
+//25. Statements and Expressions
 
 
 
