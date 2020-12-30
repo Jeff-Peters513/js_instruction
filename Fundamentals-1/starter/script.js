@@ -363,9 +363,9 @@ if (dophinsAvgScore > koalasAvgScore && dophinsAvgScore >= 100) {
 
 //26. The Switch Statement
 
+/*
 const day = 'monday';
 
-/*
 switch (day) {
     case 'monday': // day === 'monday'  strict equality check
         console.log("Plan course structure");
@@ -408,7 +408,46 @@ if (day === 'monday') {
 };
 */
 
-//25. Statements and Expressions
+//27. Statements and Expressions
+//discussion only not coding
+
+//28. The Conditional (Ternary) Operator
+/*
+const age = 15;
+// age >= 18 ? console.log('I like to drink wine') :
+//     console.log('I like to drink water');
+
+const drink = age >= 18 ? 'wine' : 'water'
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'water';
+};
+
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`);
+*/
+
+//29. Coding chanllenge #4
+
+//const bill = 275;
+const bill = 40;
+//const bill = 430;
+
+const tip = (bill >= 50) && (bill <= 300) ? bill * 0.15 : bill * 0.20;
+
+console.log(`The bill was ${bill}, the tip was ${tip}, 
+    the total value ${bill + tip}.`);
+
+
+
+
+
+
 
 
 
