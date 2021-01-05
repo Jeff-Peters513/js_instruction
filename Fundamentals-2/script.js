@@ -122,6 +122,30 @@ console.log(yearsUntilRetirement(1950, "Mike"));
 */
 
 //38. Coding chanllenge #1 of part 2
+//Dolphins and Koalas gymnastics with tougher win requirements
+
+const calcAverage = (score1, score2, score3) => {
+    return (score1 + score2 + score3) / 3;
+}
+
+//Data set 1
+const avgDolphins = calcAverage(44, 23, 71);
+const avgKoalas = calcAverage(65, 54, 49);
+
+//Data set 2
+// const avgDolphins = calcAverage(85, 54, 41);
+// const avgKoalas = calcAverage(23, 34, 27);
+
+//test code
+console.log(avgDolphins, avgKoalas);
+
+function checkWinner(avgDolphins, avgKoalas) {
+    console.log(`Koloas win (${avgKoalas} vs. ${avgDolphins})`);
+    return avgDolphins;
+}
+checkWinner(avgDolphins, avgKoalas);
+
+
 
 
 
