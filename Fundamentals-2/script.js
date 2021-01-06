@@ -121,6 +121,7 @@ console.log(yearsUntilRetirement(1991, "Jonas"));
 console.log(yearsUntilRetirement(1950, "Mike"));
 */
 
+
 //38. Coding chanllenge #1 of part 2
 //Dolphins and Koalas gymnastics with tougher win requirements
 
@@ -129,20 +130,28 @@ const calcAverage = (score1, score2, score3) => {
 }
 
 //Data set 1
-const avgDolphins = calcAverage(44, 23, 71);
-const avgKoalas = calcAverage(65, 54, 49);
+// const avgDolphins = calcAverage(44, 23, 71);
+// const avgKoalas = calcAverage(65, 54, 49);
 
 //Data set 2
-// const avgDolphins = calcAverage(85, 54, 41);
-// const avgKoalas = calcAverage(23, 34, 27);
+const avgDolphins = calcAverage(85, 54, 41);
+const avgKoalas = calcAverage(23, 34, 27);
 
 //test code
 console.log(avgDolphins, avgKoalas);
 
 function checkWinner(avgDolphins, avgKoalas) {
-    console.log(`Koloas win (${avgKoalas} vs. ${avgDolphins})`);
-    return avgDolphins;
-}
+
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koloas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log("No team met the requirement to win!");
+    };
+    return avgKoalas;
+};
+
 checkWinner(avgDolphins, avgKoalas);
 
 
