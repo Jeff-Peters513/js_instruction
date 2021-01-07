@@ -201,7 +201,46 @@ const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length -
 console.log(ages);
 */
 
-//40. Basic Array operations
+//40. Basic Array Operations (methods)
+/*
+const friends = ['Micheal', 'Steve', 'Peter'];
+
+//add elements
+const newLength = friends.push('Jay'); //push is a method/function on the friends array
+
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+//remove elements
+friends.pop(); //removes last element
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift(); //remove first
+console.log(friends);
+
+console.log(friends.indexOf('Steve'));
+console.log(friends.indexOf('Bob'));
+
+friends.push(23);
+console.log(friends.includes('Steve'));
+console.log(friends.includes('Bob'));
+console.log(friends.includes('23')); // "includes" is a strict comparsion no type coercion
+console.log(friends.includes(23));
+
+if (friends.includes('Steve')) {
+    console.log("You have a friend call Steve");
+};
+*/
+
+// Coding Challenge #2 of part 2
+
+
+
 
 
 
