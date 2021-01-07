@@ -238,7 +238,7 @@ if (friends.includes('Steve')) {
 */
 
 // Coding Challenge #2 of part 2
-
+/*
 function calcTip(bill) {
     let perc;
     if (bill <= 50 || bill >= 300) {
@@ -260,27 +260,126 @@ const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills);
 console.log(tips);
 console.log(total);
+*/
 
+//42. Introduction to objects
+/*
+//Array with data bewteen the []
+//access position/order in the array
+const jonasArray = [
+    'Jonas',
+    'Schmedtman',
+    2037 - 1991,
+    'Teacher',
+    ['Micheal', 'Peter', 'Steven']
+];
 
+//Object with key value pairs between the {}
+//There are multiple ways to create object
+//This is created by Object literal syntec
+//Access by name 'firstName'
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtman',
+    age: 2037 - 1991,
+    job: 'Teacher',
+    friends: ['Micheal', 'Peter', 'Steven']
+};
+*/
 
+/*
+//43. Dot vs. Bracket Notation
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtman',
+    age: 2037 - 1991,
+    job: 'Teacher',
+    friends: ['Micheal', 'Peter', 'Steven']
+};
+console.log(jonas);
 
+console.log(jonas.lastName); //dot notation to retreive data from an object
+console.log(jonas['lastName']); //bracket notation to retreive data from an object
+// dot notation must use real property name in the object to retreive that data
 
+//Bracket notation can build an expression (computed or assembled) they retreive that data from the object
+const nameKey = "Name";
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
 
+//const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends.');
 
+if (jonas[interestedIn]) {
+    console.log(jonas[interestedIn]);
+} else {
+    console.log('Wrong request! Must be on of the following: firstName, lastName, age, job, and friends.');
+};
 
+//adding new properties to the object 'jonas'
+jonas.location = 'Portugal'; //adding new property using dot notation
+jonas['twitter'] = '@jonasschmedtman'; //adding new property using bracket notation
+console.log(jonas);
 
+//Chanllenge
+//"Jonas has 3 friends, and his best friend is called Micheal"  //first friend is the best
+//hint use muliptle dots to get number of friends
 
+const line = `"${jonas.firstName} has ${jonas.friends.length} friends,
+and his best friend is called ${jonas.friends[0]}"`;
+console.log(line);
+*/
 
+/*
+//44. Object Methods
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtman',
+    birthYear: 1991,
+    job: 'teacher',
+    friends: ['Micheal', 'Peter', 'Steven'],
+    hasDriversLicense: true,
 
+    // calcAge: function (birthYear) {
+    //     return 2037 - birthYear;
+    // }
 
+    // calcAge: function () {
+    //     //console.log(this);
+    //     return 2037 - this.birthYear;
+    // }
 
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
 
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : "no"} driver's license.`
+    }
+};
 
+// console.log(jonas.calcAge(1991)); //calling function in an object using dot notation
+// console.log(jonas['calcAge'](1991)); //calling function in an object using bracket notation
 
+console.log(jonas.calcAge());
 
+// console.log(jonas.age);
+// console.log(jonas.age);
+// console.log(jonas.age);
 
+//Chanllenge
+//"Jonas is a 46-year old teacher, and he has a driver's license."
 
+// const line = `"${jonas.firstName} has ${jonas.friends.length} friends,
+// and his best friend is called ${jonas.friends[0]}"`;
 
+// opps console.log(`"${jonas.firstName} is a ${jonas.calcAge()}-year old ${jonas.job},
+//and he has a driver's license."`);
+
+console.log(jonas.getSummary());
+*/
+
+//45. Coding Chanllenge #3 of part 2
 
 
 
