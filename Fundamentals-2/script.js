@@ -381,8 +381,41 @@ console.log(jonas.getSummary());
 
 //45. Coding Chanllenge #3 of part 2
 
+const mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
 
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    },
+};
 
+const john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    },
+};
+
+// console.log(mark.fullName, john.fullName);
+// console.log(`Mark's BMI ${mark.calcBMI()}`);
+// console.log(`John's BMI ${john.calcBMI()}`);
+
+if (mark.calcBMI() > john.calcBMI()) {
+    console.log(`${mark.fullName}'s BMI (${mark.BMI}) is higher than ${john.fullName}'s BMI (${john.BMI})`);
+} else {
+    console.log(`${john.fullName}'s BMI (${john.BMI}) is higher than ${mark.fullName}'s BMI (${mark.BMI})`);
+};
 
 
 
