@@ -419,6 +419,7 @@ if (mark.calcBMI() > john.calcBMI()) {
 */
 
 //46 Iteration: The for loop
+/*
 // console.log("Lifting weights repetition 1");
 // console.log("Lifting weights repetition 2");
 // console.log("Lifting weights repetition 3");
@@ -435,11 +436,117 @@ if (mark.calcBMI() > john.calcBMI()) {
 for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep}`);
 };
+*/
 
+//47 Looping Arrays, Breaking and Continuing
+/*
+const jonas = [
+    'Jonas',
+    'Schmedtman',
+    2037 - 1991,
+    'Teacher',
+    ['Micheal', 'Peter', 'Steven'],
+    true
+];
 
+const types = [];
 
+for (let i = 0; i < jonas.length; i++) {
+    console.log(jonas[i], typeof jonas[i]);
+    //filling types array - 2 ways
+    //types[i] = typeof jonas[i];
+    types.push(typeof jonas[i]);
+};
 
+console.log(types);
 
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+};
+console.log(ages);
+
+// continue and break statements
+
+//continue with iteration if statement is true - if not then goes to next i iteration of the for loop
+console.log('----ONLY STRINGS-----!');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== "string") continue;
+    console.log(jonas[i], typeof jonas[i]);
+};
+
+//break stops the for loop when condition is met & no more iterations of the loop are performed
+console.log('----BREAK WITH NUMBER-----!');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] == "number") break;
+    console.log(jonas[i], typeof jonas[i]);
+};
+*/
+
+//48 Looping Backwards and Loops in Loops
+/*
+const jonas = [
+    'Jonas',
+    'Schmedtman',
+    2037 - 1991,
+    'Teacher',
+    ['Micheal', 'Peter', 'Steven'],
+    true
+];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+    console.log(i, jonas[i]);
+};
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`-------Starting Exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise} Lifting weight repetition ${rep}`);
+    };
+};
+*/
+
+//49 The While loop
+/*
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// };
+
+// let rep = 1;
+// while (rep <= 10) {
+//     console.log(`While: Lifting weights repetition ${rep}`);
+//     rep++;
+// };
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice != 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end..');
+};
+*/
+
+//50 Coding Challenge #4 of part 2
+
+function calcTip(bill) {
+    let perc;
+    if (bill <= 50 || bill >= 300) {
+        perc = 0.20;
+    } else {
+        perc = 0.15;
+    }
+    return perc * bill
+    //return "The tip is " + (perc * bill);
+};
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
 
 
 
