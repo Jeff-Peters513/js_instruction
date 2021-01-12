@@ -16,7 +16,7 @@ console.log(t);
 console.log(t, t, t, t, x);
 console.log('I like this so much!!');
 
-// TODO finish this file
-//BUG
-//VIDEO
+//TODO
 //FIXME
+//VIDEO
+//BUG
