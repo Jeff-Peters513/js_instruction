@@ -14,7 +14,7 @@ console.log('this is awesome');
 const t = 45;
 console.log(t);
 console.log(t, t, t, t, x);
-console.log('I like this so much!!');
+console.log('I like this so much!?!');
 
 //TODO
 //FIXME
@@ -38,7 +38,7 @@ TEST DATA 2: [12, 5, -5, 0, 4]
 */
 
 const data1 = [17, 21, 23];
-const data2 = [12, 5, -5, 0, 4];
+const data2 = [12, 5, -5, 0, 4, 7];
 
 //console.log(`...${data1[0]}C...${data1[1]}C...${data1[2]}C...`);
 
@@ -52,3 +52,12 @@ const printForecast = function (arr) {
 };
 printForecast(data1);
 printForecast(data2);
+
+// function printForecast2(arr) {
+//   console.log(arr);
+//   let str = '';
+//   for (let i = 0; i < arr.length; i++) {
+//     str += `${arr[i]}°C in ${i + 1} days...`;
+//   }
+//   console.log('2...' + str);
+// }
