@@ -40,6 +40,12 @@ p {
   margin-top: 30px;
 }
 
+#course-image {
+  border: 5px solid rgb(68, 68, 68);
+  padding: 10px;
+  width: 400px;
+}
+
 input,
 button {
   padding: 10px;
@@ -48,10 +54,6 @@ button {
 
 a {
   background-color: rgb(66, 205, 230);
-}
-
-#course-image {
-  width: 300px;
 }
 
 /* to modify an element within another elemnet with the same name */
