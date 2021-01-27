@@ -7,7 +7,7 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 //function to open
 const openModal = function () {
-  console.log('Button clicked');
+  //console.log('Button clicked');
   //do not need . in the below statement
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -27,3 +27,11 @@ btnCloseModal.addEventListener('click', closeModal);
 
 //remove overlay and close model window when clicking anywhere on the overlay
 overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+  //console.log('A key was pressed');
+  //console.log(e.key);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
