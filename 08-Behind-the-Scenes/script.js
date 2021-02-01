@@ -213,7 +213,7 @@ const jessica2 = {
   family: ['Alice', 'Bob'],
 };
 
-const jessicaCopy = Object.assign({}, jessica2);
+const jessicaCopy = Object.assign({}, jessica2); //copies first level information not deep level information
 jessicaCopy.lastName = 'Davis';
 
 jessicaCopy.family.push('Mary');
