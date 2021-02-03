@@ -42,9 +42,88 @@ const restaurant = {
       `Here is you declicious pasta with ${ing1}, ${ing2} and ${ing3}.`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
 
-//spread operator
+console.log('---OR---');
+//Use ANY data type, return ANY data type,
+//short-circuiting - below returns the first truthy value
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || '' || 0 || 'Hello' || 23 || null);
+
+restaurant.numGuest = 23;
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuest || 10;
+console.log(guest2);
+
+console.log('---AND---');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
+
+// '||' or will return the first truthy or last value if all falsey
+// '&&' and will return the first falsey value or last value if truthy
+
+/*
+//////////////////////////////////////
+//Rest Pattern and Parameters
+//1.) Destructuring
+//Spread, because on RIGHT side of = (assignment operator)
+const arr = [1, 2, ...[3, 4]];
+
+//REST, because on LEFT side of = (assignment operator)
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+//Objects with the REST operator
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2.) Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'funions', 'olives', 'spinach');
+
+restaurant.orderPizza('mushrooms');
+*/
+/*
+/////////////////////////////
+//The Spread Operator (...)
 const arr = [7, 8, 9];
 const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArr);
@@ -65,7 +144,7 @@ const mainMenuCopy = [...restaurant.mainMenu];
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
-//Iterables: arrays, strings, maps, sets. Not Objects
+//Iterables: arrays, strings, maps, sets. NOT Objects
 const str = 'Jonas';
 const letters = [...str, ' ', 'S.'];
 console.log(letters);
@@ -74,9 +153,9 @@ console.log(...str);
 //console.log(`${...str} Schmedtmann`);
 
 const ingredients = [
-  //   prompt("Let's make pasta! Ingredient 1?"),
-  //   prompt('Ingredient 2?'),
-  //   prompt('Ingredient 3?'),
+  // prompt("Let's make pasta! Ingredient 1?"),
+  // prompt('Ingredient 2?'),
+  // prompt('Ingredient 3?'),
 ];
 console.log(ingredients);
 
@@ -86,7 +165,7 @@ restaurant.oderPasta(ingredients[0], ingredients[1], ingredients[2]);
 restaurant.oderPasta(...ingredients);
 
 //Objects with spread operator
-const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'Guiseppe' };
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
 console.log(newRestaurant);
 
 const restaurantCopy = { ...restaurant };
@@ -94,11 +173,10 @@ restaurantCopy.name = 'Restorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
 console.log(restaurantCopy);
-
-/*
+*/
 //////////////
 //Destructuring Objects
-
+/*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 
@@ -109,9 +187,9 @@ const {
 } = restaurant;
 console.log(restaurantName, hours, tags);
 
-//default values
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+//default values follows the '='
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
 //mutating variables
 let a = 111;
@@ -120,17 +198,23 @@ const obj = { a: 23, b: 7, c: 14 };
 ({ a, b } = obj);
 console.log(a, b);
 
-//Nested objects
+//Nested objects to 'reach' open and close object in the fri object do fri: {contents}
 const {
   //fri: { open, close},
   fri: { open: o, close: c },
 } = openingHours;
 // console.log(open, close);
 console.log(o, c);
+
+const {
+  sat: { open: os, close: cs },
+} = openingHours;
+console.log(os, cs);
+
 */
 
 /*
-//destructing arrays
+//////Destructing arrays
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
