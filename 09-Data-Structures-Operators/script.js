@@ -49,6 +49,19 @@ const restaurant = {
   },
 };
 
+//The Nullish Coalescing operator '??'
+//- this acts like the || but reads 0 and '' as a truthy value
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+//Nullish: null and undefined (NOT 0 or '')
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+
+/*
+//////////////////////////////////
+//Short Circuiting (&& and ||)
 console.log('---OR---');
 //Use ANY data type, return ANY data type,
 //short-circuiting - below returns the first truthy value
@@ -80,6 +93,7 @@ restaurant.orderPizza && restaurant.orderPizza('mushroom', 'spinach');
 
 // '||' or will return the first truthy or last value if all falsey
 // '&&' and will return the first falsey value or last value if truthy
+*/
 
 /*
 //////////////////////////////////////
