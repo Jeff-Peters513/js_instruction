@@ -1,5 +1,22 @@
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: 'Classico Italiano',
   location: 'Via Angelo Tavanti 23, Firenze, Italy',
@@ -7,22 +24,22 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //before ES6 this option or just have the openingHours object listed in this object
+  //openingHours: openingHours,
 
-  order: function (starterIndex, mainIndex) {
+  //after ES6 with enchanged object literals
+  openingHours,
+
+  //functions with enchanced Object literals easier syn (remove the function word and : )
+  //one example below show the enchanced object literal option - less typing
+  //old way
+
+  // order: function (starterIndex, mainIndex) {
+  //   return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  // },
+
+  //new way
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -48,6 +65,11 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// 112 Optional Chaining (?.)
+
+// 111. Enchanced Object Literals
+//create weekdays const and then used in the openingHours object [weekday[]]
 
 /*
 //110. Looping Arrays; The for-of Loop
