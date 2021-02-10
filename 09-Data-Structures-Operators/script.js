@@ -49,6 +49,30 @@ const restaurant = {
   },
 };
 
+/*
+//110. Looping Arrays; The for-of Loop
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+//for (const item of menu) console.log(item);
+
+// for (const item of menu.entries()) {
+//   console.log(item);
+// }
+//
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+
+//destructing array version
+for (const [i, el] of menu.entries()) {
+  //console.log(item);
+  console.log(`${i + 1}: ${el}`);
+}
+
+//console.log([...menu.entries()]);
+*/
+
+/*
 //The Nullish Coalescing operator '??'
 //- this acts like the || but reads 0 and '' as a truthy value
 restaurant.numGuests = 0;
@@ -58,7 +82,7 @@ console.log(guests);
 //Nullish: null and undefined (NOT 0 or '')
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guestCorrect);
-
+*/
 /*
 //////////////////////////////////
 //Short Circuiting (&& and ||)
