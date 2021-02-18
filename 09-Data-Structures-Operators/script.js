@@ -66,6 +66,47 @@ const restaurant = {
   },
 };
 
+//116 Maps: Fundamentals
+
+/*
+///////////////////////////////
+//115 Sets (data structure)
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet);
+
+console.log(new Set('Jonas'));
+
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+orderSet.delete('Risotto');
+//orderSet.clear();
+console.log(orderSet);
+
+for (const order of orderSet) {
+  console.log(order);
+}
+
+//Example use: to remove dupulicates
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+
+console.log(new Set('jonasschmedtmann').size);
+*/
 /*
 //113 looping Objects: Object keys, Values and Entries
 //Property NAMES
