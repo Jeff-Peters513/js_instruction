@@ -66,8 +66,43 @@ const restaurant = {
   },
 };
 
+/*
 //117 Maps: Iteration
 
+const question = new Map([
+  ['question', 'What is the best Programming Language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['Correct', 3],
+  [true, 'Correct!!'],
+  [false, 'Try Again!'],
+]);
+console.log(question);
+
+//convert Object to map
+console.log(Object.entries(openingHours));
+
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//map iterations - in this "quiz app"
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+//const answer = Number(prompt('Your answer '));
+const answer = 3; //pre-set so prompt does not keep showing up
+console.log(answer);
+
+console.log(question.get(answer === question.get('Correct')));
+
+//convert map to array
+console.log([...question]);
+//console.log(question.entries());
+console.log([...question.keys()]);
+console.log([...question.values()]);
+*/
 /*
 //116 Maps: Fundamentals
 const rest = new Map();
