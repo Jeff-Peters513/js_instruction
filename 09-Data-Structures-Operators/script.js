@@ -68,6 +68,64 @@ const restaurant = {
 /////////////
 //122 Working with strings part 3
 
+//split and join
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' '); //created an array for each part of name seperated by space
+  const namesUpper = []; //created an array to capture each part of name after for loop
+
+  for (const n of names) {
+    //2 methods of captalizing first letter of each name part
+
+    //method 1 -capitalizes first letter of name part then adds the rest lowercase
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1));
+
+    //method 2 - replace first letter of each name part with uppercase letter
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  //joins the fixed array of names into one string and prints to console
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jeffrey david peters');
+capitalizeName('jeff timothy mollie dutch finn ms. kitty');
+
+//padding a string
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+'));
+console.log('jeff'.padStart(20, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  //note: the blank space turns the entire number into a string
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(45678904));
+console.log(maskCreditCard(4443378798970983482));
+console.log(maskCreditCard('3043298579403834'));
+
+//Repeat
+const message2 = 'Bad Weather...All Departures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'p'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+
 /*
 /////////////////////
 //121 Working with strings part 2
