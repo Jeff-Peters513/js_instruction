@@ -65,7 +65,9 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
-/////////////
+
+/*
+/////////////////////////////
 //122 Working with strings part 3
 
 //split and join
@@ -125,6 +127,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
+*/
 
 /*
 /////////////////////
