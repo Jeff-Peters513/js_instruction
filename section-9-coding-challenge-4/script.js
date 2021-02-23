@@ -38,28 +38,24 @@ GOOD LUCK 😀
 //next two lines add the two boxes to the html
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
+const finalCamel = [];
 
 //define a btn to capture the click
 const btn = document.querySelector('button');
 //use addEventListener to capture the test in the box when "click"
 btn.addEventListener('click', function () {
   //capture text when button is clicked
-  const test = document.querySelector('textarea').value;
-  const [...entry] = test.split('\n');
-  console.log(entry);
-  const trimCamel = [];
+  const text = document.querySelector('textarea').value;
+  const [...entries] = text.split('\n');
+  //  console.log(entries);
 
   //trim, remove _ and camelcase the two words
-  for (const e of entry) {
-    trimCamel.push(e.trim());
+  for (const [i, e] of entries.entries()) {
+    const [first, second] = e.trim().toLocaleLowerCase().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
-  console.log(trimCamel);
-
-  //console.log(entry);
 });
-
-// \n = new line or carraige return
-// const test2 =
-//   'underscore_case\nfirst_name\nSome_Variable\ncalculate_AGE\ndelayed_departure';
-
-// //console.log(test2);
