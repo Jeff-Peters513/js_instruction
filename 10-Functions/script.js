@@ -126,7 +126,6 @@ greet3('Hello', 'Fun Arrow function');
 
 */
 
-/*
 ////////////////
 //132 The Call and Apply Methods
 
@@ -180,7 +179,62 @@ console.log(swiss);
 
 //Jonas prefers the call method
 book.call(swiss, ...flightData);
-*/
 
 ////////////////////
 //133 The bind method
+// book.call(eurowings, 23, 'Sarah Williams');
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW('23', 'Steven Williams');
+
+//the bind can preload more than just the "this" keyword
+//the in example below we apply a partial "string" so less info can be type later
+//called "partial application"
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Jonas Schmedtmann');
+bookEW23('Martha Cooper');
+
+//With Event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+//Partial Application
+
+const addTax = (rate, value) => value + value * (rate / 100);
+console.log(addTax(10, 200));
+
+//the first null is the "this" keyword that is not used
+const addVAT = addTax.bind(null, 23);
+// addVAT = value => value + value * 0.23;
+
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+//coding chanllenge to rewrite the tax function with a function that returns a function
+//like the greet example we did earlier
+
+const euroVAT = function (vRATE) {
+  return function (amount) {
+    const totalAmount = amount + amount * (vRATE / 100);
+    console.log(`The total amount with VAT is ${totalAmount}`);
+  };
+};
+
+const totalVAT = euroVAT(23);
+totalVAT(100);
+totalVAT(1000);
+totalVAT(1.0);
+console.log(' ');
+euroVAT(23)(100);
