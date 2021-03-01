@@ -83,7 +83,7 @@ displayMovements(account1.movements);
 /////////////////////////////////////////////////
 // LECTURES
 
-//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 /*
@@ -175,3 +175,50 @@ currenciesUnique.forEach(function (value, _, set) {
   console.log(`${value}: ${value}`);
 });
 */
+
+//////////////
+//147 Data Transformations: Map, Filter and Reduce
+//Map creates another array and performs a calculation or change -
+//maps orginal -action on each elements => new array
+//
+//Filter - returns new array if the element passes specified test condition
+//
+//Reduce - reduce boils all array elements down to one single value.
+////////////////
+//148 The Map Method
+
+const eurToUsd = 1.1;
+
+// const movementsUsd = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+//arrow function version of the function above
+const movementsUsd = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUsd);
+
+const movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(mov * eurToUsd);
+}
+console.log(movementsUSDfor);
+
+//option 1 long version
+// const movementsDescriptions = movements.map((mov, i) => {
+//   if (mov > 0) {
+//     return `Movement ${i + 1}: You deposited ${mov}`;
+//   } else {
+//     return `Movement ${i + 1}: You withdrew ${Math.abs(mov)}`;
+//   }
+// });
+
+//reduced version
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+console.log(movementsDescriptions);
