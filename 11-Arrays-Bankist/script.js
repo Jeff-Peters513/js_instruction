@@ -79,6 +79,24 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
+calcDisplayBalance(account1.movements);
+
+//using map method in the project
+const creatUsernames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+creatUsernames(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -184,6 +202,7 @@ currenciesUnique.forEach(function (value, _, set) {
 //Filter - returns new array if the element passes specified test condition
 //
 //Reduce - reduce boils all array elements down to one single value.
+/*
 ////////////////
 //148 The Map Method
 
@@ -194,10 +213,11 @@ const eurToUsd = 1.1;
 // });
 
 //arrow function version of the function above
+// in this example we are returning (mov * eurToUsd) value
 const movementsUsd = movements.map(mov => mov * eurToUsd);
 
-console.log(movements);
-console.log(movementsUsd);
+//console.log(movements);
+//console.log(movementsUsd);
 
 const movementsUSDfor = [];
 for (const mov of movements) {
@@ -222,3 +242,59 @@ const movementsDescriptions = movements.map(
     )}`
 );
 console.log(movementsDescriptions);
+*/
+//////////////////////////
+/*
+//149 using map on array in the project see above
+//150 The Filter Method
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+const depositsFor = [];
+for (const mov of movements) {
+  if (mov > 0) {
+    depositsFor.push(mov);
+  }
+}
+//
+console.log(depositsFor);
+//
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+*/
+///////////////////
+//151 Reduce method
+console.log(movements);
+
+//acc equall accumulator -> like a snowball
+// const balance = movements.reduce(function (acc, cur, i, arr) {
+//   console.log(`Iteration ${i}: ${acc}`);
+//   return acc + cur;
+// }, 0);
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance);
+
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+
+console.log(balance2);
+
+//Maxumum Value
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) {
+    //console.log(`acc was the largest ${acc}`);
+    return acc;
+  } else {
+    //console.log(`mov was the largest ${mov}`);
+    return mov;
+  }
+}, movements[0]);
+console.log(max);
+
+/////////////////////////
+//
