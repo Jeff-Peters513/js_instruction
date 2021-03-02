@@ -100,7 +100,7 @@ const calcDisplaySummary = function (movements) {
     .filter(mov => mov > 0)
     .map(deposit => deposit * (1.2 / 100))
     .filter((int, _i, arr) => {
-      console.log(arr);
+      //console.log(arr);
       return int >= 1;
     })
     .reduce((acc, int) => acc + int, 0);
@@ -322,6 +322,7 @@ const max = movements.reduce((acc, mov) => {
 console.log(max);
 */
 /////////////////////////
+/*
 //153 The Magic of Chaining Methods
 const eurToUsd = 1.1;
 console.log(movements);
@@ -336,3 +337,18 @@ const totalDepositsUSD = movements
   //.map(mov => mov * eurToUsd)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositsUSD);
+*/
+/////////////////
+/*
+//155 The find Method
+
+//find method only returns the first element in an array and only the element not an array
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
+*/
