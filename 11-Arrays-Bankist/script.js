@@ -78,9 +78,11 @@ const displayMovements = function (movements) {
   });
 };
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance}€`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  // const balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  // acc.balance = balance;
+  labelBalance.textContent = `${acc.balance}€`;
 };
 
 const calcDisplaySummary = function (acc) {
@@ -117,6 +119,17 @@ const creatUsernames = function (accs) {
 };
 creatUsernames(accounts);
 
+const updateUI = function (acc) {
+  //display movements
+  displayMovements(acc.movements);
+
+  //display balence
+  calcDisplayBalance(acc);
+
+  //display summary
+  calcDisplaySummary(acc);
+};
+
 //Event handler
 let currentAccount;
 
@@ -141,16 +154,33 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
-    //display movements
-    displayMovements(currentAccount.movements);
+    //update UI
+    updateUI(currentAccount);
+  }
+});
 
-    //display balence
-    calcDisplayBalance(currentAccount.movements);
+btnTransfer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.username === inputTransferTo.value
+  );
+  inputTransferAmount.value = inputTransferTo.value = '';
 
-    //display summary
-    calcDisplaySummary(currentAccount);
+  // check to see if there is enough money in account and can not transfer to self
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.username !== currentAccount.username
+  ) {
+    //this block of code runs if all statements are ture in the if(boolean)
+    //Doing transfer and  update UI
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
 
-    //console.log('LOGIN');
+    //update UI
+    updateUI(currentAccount);
   }
 });
 
