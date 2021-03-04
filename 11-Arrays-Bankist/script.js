@@ -184,6 +184,21 @@ btnTransfer.addEventListener('click', function (e) {
   }
 });
 
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const amount = Number(inputLoanAmount.value);
+
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    //add movement to
+    currentAccount.movements.push(amount);
+
+    //update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
 btnClose.addEventListener('click', function (e) {
   e.preventDefault();
   //confirm user adn user pin
@@ -205,6 +220,7 @@ btnClose.addEventListener('click', function (e) {
   } else {
     console.log('Entered incorrect information');
   }
+  inputCloseUsername.value = inputClosePin.value = '';
 });
 
 /////////////////////////////////////////////////
@@ -438,3 +454,66 @@ console.log(accounts);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 */
+
+/*
+///////////////////
+//159 Some and every array methods
+console.log(movements);
+
+//Equality - confirms if (-130) element is present in array - returns boolean
+console.log(movements.includes(-130));
+
+//Some:vCondition - some() Determines whether the specified callback function
+//returns true for any element of an array.
+console.log(movements.some(mov => mov === -130));
+
+//this example returns boolean if any element of mov is > 1500
+const anyDeposits = movements.some(mov => mov > 1500);
+console.log(anyDeposits);
+
+//Every array method
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+//Seperate call back
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+*/
+/*
+/////////////////
+//160 flat and flatMap
+
+//flat flattens arrays to one array
+const arr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arrDeep.flat(1)); // 1 is the default and not needed - 1 level deep
+console.log(arrDeep.flat(2)); //goes two levels deep to flatten array
+
+// const accountMovements = accounts.map(acc => acc.movements);
+// console.log(accountMovements);
+// const allMovements = accountMovements.flat();
+// console.log(allMovements);
+// const overalBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance);
+
+//a more concise way by using chaining
+//flat
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance);
+
+//flapMap - FYI flatMap only goes 1 level deep
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log('overalBalance2 =' + overalBalance2);
+*/
+
+///////////////
+//161 sorting array
