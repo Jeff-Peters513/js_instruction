@@ -61,10 +61,14 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = ''; //removes pervious content
   //.textContent = 0 - like in pig game
-  movements.forEach(function (mov, i) {
+
+  //used slice method to create new array and not mutate original array
+  const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
     <div class="movements__row">
@@ -221,6 +225,13 @@ btnClose.addEventListener('click', function (e) {
     console.log('Entered incorrect information');
   }
   inputCloseUsername.value = inputClosePin.value = '';
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
@@ -515,5 +526,78 @@ const overalBalance2 = accounts
 console.log('overalBalance2 =' + overalBalance2);
 */
 
+/*
 ///////////////
 //161 sorting array
+
+//Strings - this mutates - changes the original array!!
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+console.log(owners.sort());
+
+//Numbers
+console.log(movements);
+//sort changes the numbers into strings and
+//does not sort as expected
+//console.log(movements.sort());
+
+//
+// return < 0, A, B (keep order)
+// return > 0, B, A (switch order)
+
+//Ascending
+// movements.sort((a, b) => {
+//   if (a > b) return 1;
+//   if (a < b) return -1;
+// });
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+//Descending
+// movements.sort((a, b) => {
+//   if (a > b) return -1;
+//   if (a < b) return 1;
+// });
+movements.sort((a, b) => b - a);
+console.log(movements);
+*/
+
+//////////////////
+//161 More ways of creating and filling arrays
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//weird action if Array constructor only has one number in the ().
+//it creates an array with
+//Empty arrays + fill method
+const x = new Array(7);
+console.log(x);
+// console.log(x.map(() => 5)); // does not work
+
+//x.fill(1);
+x.fill(1, 3, 5); //adds 1 starting a IDX 3
+console.log(x);
+
+arr.fill(23, 2, 6);
+console.log(arr);
+
+//Array.from
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, (_cur, i) => i + 1);
+console.log(z);
+
+labelBalance.addEventListener('click', function (e) {
+  e.preventDefault();
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', ''))
+  );
+  console.log(movementsUI);
+
+  //alternative method to retrieve the data from the document but then you need
+  //map and change things - not as nice as movementsUI array above
+  const movementsUI2 = [...document.querySelectorAll('.movements__value')];
+  console.log('ui2' + movementsUI2);
+});
