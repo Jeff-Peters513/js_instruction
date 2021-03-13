@@ -238,7 +238,7 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 // LECTURES
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 /*
@@ -276,7 +276,7 @@ console.log([...arr, ...arr2]);
 console.log(letters.join(' - '));
 */
 
-/*
+///*
 /////////////
 //142 Loopping Arrays: forEach
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -296,18 +296,19 @@ for (const [i, movement] of movements.entries()) {
 //forEach pass the value, index, and the full array every time it loops
 //forEach will cycle thru the entire loop - continue and break does not work
 console.log('------forEach-------');
-movements.forEach(function (movement, i, arr) {
+movements.forEach(function (movement, i, _arr) {
   if (movement > 0) {
     console.log(`Movement ${i + 1}: You deposited ${movement}`);
   } else {
     console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`);
   }
 });
+
 // 0: function(200)
 // 1: function(450)
 // 2: function(400)
 // ...
-*/
+//*/
 /*
 //////////////
 // 143 forEach with Maps and Sets
@@ -465,7 +466,6 @@ console.log(accounts);
 const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 console.log(account);
 */
-
 /*
 ///////////////////
 //159 Some and every array methods
@@ -488,9 +488,9 @@ console.log(account4.movements.every(mov => mov > 0));
 
 //Seperate call back
 const deposit = mov => mov > 0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
-console.log(movements.filter(deposit));
+console.log('Some', movements.some(deposit));
+console.log(movements.every('every' + deposit));
+console.log(movements.filter('Filter' + deposit));
 */
 /*
 /////////////////
@@ -668,4 +668,4 @@ console.log(convertTitleCase('and here is another title with an EXAMPLE'));
 */
 
 //////////////////////
-//Coding Chanllenge #4 (lecture 165)
+//Coding Chanllenge #4 (lecture 165) in seperate file
