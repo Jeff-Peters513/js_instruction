@@ -1,7 +1,6 @@
 // Remember, we're gonna use strict mode in all scripts now!
 'use strict';
 
-/*
 ///////////////////////////////////////
 // Using Google, StackOverflow and MDN
 
@@ -67,7 +66,6 @@ const calcTempAmplitudeNew = function (t1, t2) {
 const amplitudeNew = calcTempAmplitudeNew([3, 5, 1], [9, 0, 5]);
 console.log(amplitudeNew);
 
-
 ///////////////////////////////////////
 // Debugging with the Console and Breakpoints
 const measureKelvin = function () {
@@ -114,7 +112,6 @@ const calcTempAmplitudeBug = function (t1, t2) {
 const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
 // A) IDENTIFY
 console.log(amplitudeBug);
-*/
 
 ///////////////////////////////////////
 // Coding Challenge #1
@@ -158,4 +155,3 @@ const printForecast = function (arr) {
 };
 printForecast(data1);
 */
-
